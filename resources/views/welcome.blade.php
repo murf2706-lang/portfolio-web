@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Raffi Multimedia Portfolio</title>
+<title>Muhammad Raffi | Multimedia Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -31,72 +28,30 @@ color:white;
 overflow-x:hidden;
 }
 
-/* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#050000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:99999;
-}
-
-.loader-text{
-font-size:40px;
-font-weight:700;
-color:#ff4444;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:.3;}
-50%{opacity:1;}
-100%{opacity:.3;}
-}
-
-/* PARTICLES */
-
-.particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(circle,#ff4444 1px,transparent 1px);
-background-size:50px 50px;
-opacity:.08;
-pointer-events:none;
-z-index:-1;
-}
-
-/* BACKGROUND GLOW */
+/* BACKGROUND */
 
 body::before{
 content:'';
 position:fixed;
-width:700px;
-height:700px;
+width:600px;
+height:600px;
 background:#ff0000;
 filter:blur(220px);
-top:-250px;
-left:-250px;
-opacity:.3;
+top:-200px;
+left:-200px;
+opacity:.25;
 z-index:-1;
 }
 
 body::after{
 content:'';
 position:fixed;
-width:700px;
-height:700px;
+width:600px;
+height:600px;
 background:#ff6600;
 filter:blur(220px);
-bottom:-250px;
-right:-250px;
+bottom:-200px;
+right:-200px;
 opacity:.2;
 z-index:-1;
 }
@@ -109,21 +64,21 @@ top:20px;
 left:50%;
 transform:translateX(-50%);
 width:90%;
-max-width:1200px;
-padding:15px 35px;
+max-width:1300px;
+padding:18px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(255,255,255,.05);
-backdrop-filter:blur(15px);
-border-radius:50px;
+backdrop-filter:blur(20px);
+border-radius:60px;
 border:1px solid rgba(255,255,255,.08);
 z-index:999;
 }
 
 .logo{
-font-size:28px;
-font-weight:700;
+font-size:30px;
+font-weight:800;
 color:#ff4444;
 }
 
@@ -156,15 +111,14 @@ flex-wrap:wrap;
 }
 
 .hero-left img{
-width:350px;
-height:450px;
+width:380px;
+height:500px;
 object-fit:cover;
 border-radius:30px;
-border:3px solid rgba(255,255,255,.1);
+border:3px solid rgba(255,255,255,.08);
 box-shadow:
-0 0 30px rgba(255,0,0,.5),
-0 0 60px rgba(255,0,0,.3);
-animation:floating 4s ease-in-out infinite;
+0 0 30px rgba(255,0,0,.4),
+0 0 60px rgba(255,0,0,.2);
 }
 
 .hero-right{
@@ -172,65 +126,46 @@ max-width:650px;
 }
 
 .hero-right h1{
-font-size:100px;
+font-size:90px;
 font-weight:800;
 line-height:1;
+}
+
+.hero-right span{
+color:#ff4444;
 }
 
 .line-glow{
 width:220px;
 height:6px;
-margin-top:15px;
-margin-bottom:25px;
-border-radius:50px;
+margin:20px 0;
 background:linear-gradient(
 90deg,
 #ff0000,
 #ff6600
 );
-box-shadow:
-0 0 15px red,
-0 0 30px red;
+border-radius:50px;
 }
 
-.job-title{
+.hero-badge{
 display:inline-block;
-padding:12px 30px;
+padding:15px 30px;
 background:linear-gradient(
 45deg,
 #ff0000,
 #ff6600
 );
-border-radius:12px;
-font-size:22px;
-font-weight:600;
-}
-
-.badge-container{
-display:flex;
-gap:12px;
-margin-top:20px;
-flex-wrap:wrap;
-}
-
-.badge-container span{
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border-radius:50px;
-border:1px solid rgba(255,255,255,.1);
-transition:.4s;
-}
-
-.badge-container span:hover{
-background:#ff3333;
-transform:translateY(-5px);
+border-radius:15px;
+text-decoration:none;
+color:white;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero-right p{
-margin-top:25px;
-font-size:18px;
-line-height:1.9;
+line-height:2;
 color:#ddd;
+margin-top:20px;
 }
 
 .btn{
@@ -246,86 +181,119 @@ border-radius:50px;
 text-decoration:none;
 color:white;
 font-weight:600;
-transition:.4s;
 }
 
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 20px rgba(255,0,0,.5);
-}
-
-/* STATS */
-
-.stats{
-display:flex;
-justify-content:center;
-gap:80px;
-flex-wrap:wrap;
-text-align:center;
-}
-
-.stats h1{
-font-size:70px;
-font-weight:800;
-color:#ff4444;
-text-shadow:0 0 20px rgba(255,0,0,.6);
-}
-
-.stats p{
-color:#ddd;
-}
-
-/* ABOUT */
+/* SECTION */
 
 section{
 padding:100px 8%;
 }
 
-.title{
-font-size:50px;
+.section-title{
 text-align:center;
+font-size:55px;
 margin-bottom:50px;
 }
 
-.title span{
+.section-title span{
 color:#ff4444;
 }
 
-.about-box{
-background:rgba(255,255,255,.05);
-padding:40px;
+/* ABOUT */
+
+.about-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.about-card{
+background:rgba(255,255,255,.04);
+padding:35px;
 border-radius:25px;
 border:1px solid rgba(255,255,255,.08);
-line-height:2;
+transition:.4s;
+}
+
+.about-card:hover{
+transform:translateY(-10px);
+}
+
+.about-icon{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.about-card p{
+line-height:1.8;
 color:#ddd;
 }
 
-/* ANIMATION */
+/* SOFTWARE */
 
-@keyframes floating{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
+.software-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-@media(max-width:900px){
+.software-card{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.software-card img{
+width:70px;
+height:70px;
+margin-bottom:15px;
+}
+
+/* SKILL */
+
+.skill-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill-item{
+padding:25px;
+text-align:center;
+border-radius:15px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
 
 .hero{
+flex-direction:column;
 text-align:center;
-}
-
-.hero-right h1{
-font-size:60px;
+padding-top:150px;
 }
 
 .hero-left img{
 width:280px;
-height:360px;
+height:350px;
+}
+
+.hero-right h1{
+font-size:55px;
 }
 
 nav{
 flex-direction:column;
 gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
 }
 
 }
@@ -336,100 +304,55 @@ gap:15px;
 
 <body>
 
-<div id="loader">
-<div class="loader-text">
-RAFFI PORTFOLIO
-</div>
-</div>
-
-<div class="particles"></div>
-
 <nav>
 
 <div class="logo">
-RAFFI
+PORTOFOLIO
 </div>
 
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#software">Software</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#home">Beranda</a></li>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#experience">Pengalaman</a></li>
+<li><a href="#sertifikat">Sertifikat</a></li>
+<li><a href="#portfolio">Portofolio</a></li>
+<li><a href="#contact">Kontak</a></li>
 </ul>
 
 </nav>
 
 <section class="hero" id="home">
 
-<div class="hero-left" data-aos="fade-right">
+<div class="hero-left">
 
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop">
+<img src="{{ asset('images/foto-raffi.png') }}">
 
 </div>
 
-<div class="hero-right" data-aos="fade-left">
+<div class="hero-right">
 
-<h1>PORTFOLIO</h1>
+<h1>
+MUHAMMAD
+<span>RAFFI</span>
+</h1>
 
 <div class="line-glow"></div>
 
-<h2 class="job-title">
-🎬 Multimedia Broadcasting Creator
-</h2>
+<a href="https://mmb.pens.ac.id"
+target="_blank"
+class="hero-badge">
 
-<div class="badge-container">
-
-<span>🎥 Video Editing</span>
-
-<span>🎨 Graphic Design</span>
-
-<span>📸 Photography</span>
-
-<span>📡 Broadcasting</span>
-
-</div>
-
-<p>
-
-I am passionate about multimedia broadcasting,
-creative storytelling, graphic design,
-video production, photography, and digital communication.
-
-I enjoy creating engaging visual experiences through
-modern design and multimedia content production.
-
-</p>
-
-<a href="#portfolio" class="btn">
-
-View Portfolio
+🎓 Mahasiswa Teknologi Multimedia Broadcasting
 
 </a>
 
-</div>
+<p>
+Saya seorang Mahasiswa Teknologi Multimedia Broadcasting dari Politeknik Elektronika Negeri Surabaya yang sangat termotivasi dan sangat tertarik dalam produksi video, videografi, dan penyiaran radio. Saya bisa mengoprasikan peralatan kamera, mengedit konten video, mendukung produksi live streaming dan mengembangkan keterampilan teknik dan kreatif dalam produksi Multimedia
+</p>
 
-</section>
-
-<section>
-
-<div class="stats">
-
-<div>
-<h1>50+</h1>
-<p>Projects</p>
-</div>
-
-<div>
-<h1>20+</h1>
-<p>Clients</p>
-</div>
-
-<div>
-<h1>5+</h1>
-<p>Years Learning</p>
-</div>
+<a href="#portfolio" class="btn">
+Lihat Portofolio
+</a>
 
 </div>
 
@@ -437,117 +360,417 @@ View Portfolio
 
 <section id="about">
 
-<h1 class="title">
-About <span>Me</span>
-</h1>
+<h2 class="section-title">
+Tentang <span>Saya</span>
+</h2>
 
-<div class="about-box" data-aos="fade-up">
+<div class="about-container">
 
-As a Multimedia Broadcasting enthusiast, I specialize in
-video editing, creative content production,
-graphic design, and digital storytelling.
-
-I enjoy transforming ideas into visual experiences
-that inspire, inform, and engage audiences.
-
+<div class="about-card">
+<div class="about-icon">🎓</div>
+<h3>Pendidikan</h3>
+<p>
+Mahasiswa D3 Teknologi Multimedia Broadcasting
+Politeknik Elektronika Negeri Surabaya.
+</p>
 </div>
 
-</section>
-
-<section id="experience">
-
-<h1 class="title">
-My <span>Experience</span>
-</h1>
-
-<div class="timeline">
-
-<div class="timeline-item" data-aos="fade-right">
-
-<h3>2023</h3>
-
+<div class="about-card">
+<div class="about-icon">🎥</div>
+<h3>Minat</h3>
 <p>
-Started learning Graphic Design,
-Poster Design, and Social Media Content Creation.
+Videografi, Broadcasting,
+Live Streaming,
+Editing Video,
+dan Produksi Multimedia.
 </p>
-
 </div>
 
-<div class="timeline-item" data-aos="fade-left">
-
-<h3>2024</h3>
-
+<div class="about-card">
+<div class="about-icon">🚀</div>
+<h3>Tujuan</h3>
 <p>
-Focused on Video Editing, Motion Graphics,
-and Multimedia Storytelling Projects.
+Menjadi profesional di bidang multimedia
+yang mampu menghasilkan karya kreatif
+dan berdampak positif.
 </p>
-
-</div>
-
-<div class="timeline-item" data-aos="fade-right">
-
-<h3>2025</h3>
-
-<p>
-Developed Multimedia Broadcasting Projects,
-Creative Campaigns, and Digital Branding.
-</p>
-
-</div>
-
-<div class="timeline-item" data-aos="fade-left">
-
-<h3>2026</h3>
-
-<p>
-Portfolio Development, Creative Production,
-and Professional Multimedia Showcase.
-</p>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- SOFTWARE -->
+<section>
 
-<section id="software">
-
-<h1 class="title">
-My <span>Software</span>
-</h1>
+<h2 class="section-title">
+Software <span>Yang Dikuasai</span>
+</h2>
 
 <div class="software-grid">
 
-<div class="software-card" data-aos="zoom-in">
+<div class="software-card">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png">
 <h3>Adobe Photoshop</h3>
 </div>
 
-<div class="software-card" data-aos="zoom-in" data-aos-delay="100">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968472.png">
-<h3>Adobe Illustrator</h3>
-</div>
-
-<div class="software-card" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968516.png">
-<h3>Adobe Lightroom</h3>
-</div>
-
-<div class="software-card" data-aos="zoom-in" data-aos-delay="300">
+<div class="software-card">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968525.png">
 <h3>Adobe Premiere Pro</h3>
 </div>
 
-<div class="software-card" data-aos="zoom-in" data-aos-delay="400">
+<div class="software-card">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968428.png">
 <h3>Adobe After Effects</h3>
 </div>
 
-<div class="software-card" data-aos="zoom-in" data-aos-delay="500">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
+<div class="software-card">
+<img src="{{ asset('images/canva-ku.jpg') }}">
 <h3>Canva</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Keahlian <span>Saya</span>
+</h2>
+
+<div class="skill-grid">
+
+<div class="skill-item">🎬 Produksi Video</div>
+<div class="skill-item">🎞 Editing Video</div>
+<div class="skill-item">📸 Fotografi</div>
+<div class="skill-item">📺 Broadcasting</div>
+<div class="skill-item">🎙 Live Streaming</div>
+<div class="skill-item">🎨 Desain Grafis</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<style>
+
+.experience-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:25px;
+
+}
+
+.experience-card{
+
+background:rgba(255,255,255,.04);
+
+padding:30px;
+
+border-radius:25px;
+
+border-left:5px solid #ff4444;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.experience-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,0,0,.2);
+
+}
+
+.experience-card h3{
+
+color:#ff4444;
+
+margin-bottom:10px;
+
+font-size:22px;
+
+}
+
+.experience-card h4{
+
+margin-bottom:15px;
+
+}
+
+.experience-card p{
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+/* CERTIFICATE */
+
+.certificate-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:30px;
+
+}
+
+.certificate-card{
+
+background:rgba(255,255,255,.04);
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.certificate-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,0,0,.2);
+
+}
+
+.certificate-card img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+}
+
+.certificate-content{
+
+padding:25px;
+
+}
+
+.certificate-content h3{
+
+color:#ff4444;
+
+margin-bottom:10px;
+
+}
+
+.certificate-content p{
+
+color:#ddd;
+
+margin-bottom:20px;
+
+}
+
+.btn-sertifikat{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:linear-gradient(
+45deg,
+#ff0000,
+#ff6600
+);
+
+border-radius:50px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+</style>
+
+<section id="experience">
+
+<h2 class="section-title">
+Pengalaman <span>Saya</span>
+</h2>
+
+<div class="experience-grid">
+
+<div class="experience-card">
+
+<h3>Kru Produksi STV 2 INSIGHT LENS</h3>
+
+<h4>Posisi: Soundman</h4>
+
+<p>
+Bertanggung jawab dalam pengelolaan dan monitoring kualitas audio selama proses produksi program televisi, memastikan suara yang direkam jernih dan sesuai standar penyiaran.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Kru Produksi STV 1 CHILL TALK</h3>
+
+<h4>Posisi: Switcher</h4>
+
+<p>
+Mengoperasikan sistem switching untuk mengatur perpindahan antar kamera dan tampilan visual secara real-time selama proses siaran berlangsung.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Proyek Akhir Studio Radio Sirik FM</h3>
+
+<h4>Posisi: Mixer</h4>
+
+<p>
+Bertanggung jawab dalam proses mixing audio podcast, termasuk pengaturan level suara, kualitas rekaman, dan kenyamanan pendengar.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Proyek Akhir Jurnalistik Liputan 10 November</h3>
+
+<h4>Posisi: Videografer</h4>
+
+<p>
+Melakukan pengambilan gambar dan dokumentasi kegiatan lapangan untuk kebutuhan liputan berita dan penyajian informasi visual.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Kru Film "Pambali"</h3>
+
+<h4>Posisi: Art Director</h4>
+
+<p>
+Mengatur konsep visual, properti, serta estetika produksi untuk mendukung suasana dan kebutuhan cerita dalam film.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Proyek Akhir Web Design</h3>
+
+<h4>Posisi: UI Designer</h4>
+
+<p>
+Merancang antarmuka pengguna yang responsif dan mudah digunakan dengan memperhatikan aspek estetika dan pengalaman pengguna (User Experience).
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATE -->
+
+<section id="sertifikat">
+
+<h2 class="section-title">
+Sertifikat <span>& Pencapaian</span>
+</h2>
+
+<div class="certificate-grid">
+
+<div class="certificate-card">
+
+<img src="{{ asset('images/Sertifikat-Panitia-MMBFEST.png') }}">
+
+<div class="certificate-content">
+
+<h3>MMB FEST 2025</h3>
+
+<p>
+Divisi Hubungan Masyarakat (Humas)
+</p>
+
+<a href="{{ asset('images/Sertifikat-Panitia-MMBFEST.png') }}"
+target="_blank"
+class="btn-sertifikat">
+
+Lihat Sertifikat
+
+</a>
+
+</div>
+
+</div>
+
+<div class="certificate-card">
+
+<img src="{{ asset('images/Sertifikat-Panitia-PKKMB.png') }}">
+
+<div class="certificate-content">
+
+<h3>PKKMB X TECHNOGEAR 2025</h3>
+
+<p>
+Liaison Officer (LO)
+</p>
+
+<a href="{{ asset('images/Sertifikat-Panitia-PKKMB.png') }}"
+target="_blank"
+class="btn-sertifikat">
+
+Lihat Sertifikat
+
+</a>
+
+</div>
+
+</div>
+
+<div class="certificate-card">
+
+<img src="{{ asset('images/Sertifikat-Panitia-DTMK.png') }}">
+
+<div class="certificate-content">
+
+<h3>DTMK EXPO 2026</h3>
+
+<p>
+Laboratorium Multimedia Broadcasting
+</p>
+
+<a href="{{ asset('images/Sertifikat-Panitia-DTMK.png') }}"
+target="_blank"
+class="btn-sertifikat">
+
+Lihat Sertifikat
+
+</a>
+
+</div>
+
 </div>
 
 </div>
@@ -556,25 +779,492 @@ My <span>Software</span>
 
 <!-- PORTFOLIO -->
 
+<style>
+
+.portfolio-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:30px;
+
+}
+
+.portfolio-card{
+
+background:rgba(255,255,255,.04);
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.portfolio-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,0,0,.2);
+
+}
+
+.portfolio-card img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+}
+
+.portfolio-content{
+
+padding:25px;
+
+}
+
+.portfolio-content h3{
+
+color:#ff4444;
+
+margin-bottom:10px;
+
+}
+
+.portfolio-content p{
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+.cv-box{
+
+max-width:900px;
+
+margin:auto;
+
+padding:50px;
+
+text-align:center;
+
+background:rgba(255,255,255,.04);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-box{
+
+max-width:900px;
+
+margin:auto;
+
+padding:50px;
+
+text-align:center;
+
+background:rgba(255,255,255,.04);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-box p{
+
+line-height:2;
+
+color:#ddd;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#aaa;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+margin-top:50px;
+
+}
+
+/* ========================= */
+/* ANIMASI FINAL RAFFI */
+/* ========================= */
+
+/* FOTO FLOATING */
+
+.hero-left img{
+animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* NAMA GLOW */
+
+.hero-right h1{
+animation:nameGlow 2s infinite alternate;
+}
+
+@keyframes nameGlow{
+
+from{
+text-shadow:
+0 0 10px rgba(255,255,255,.1);
+}
+
+to{
+text-shadow:
+0 0 20px rgba(255,0,0,.8),
+0 0 40px rgba(255,0,0,.5);
+}
+
+}
+
+/* GARIS MERAH */
+
+.line-glow{
+animation:lineGlow 2s infinite alternate;
+}
+
+@keyframes lineGlow{
+
+from{
+box-shadow:0 0 10px red;
+}
+
+to{
+box-shadow:
+0 0 25px red,
+0 0 50px red;
+}
+
+}
+
+/* SEMUA CARD */
+
+.about-card,
+.software-card,
+.skill-item,
+.experience-card,
+.certificate-card,
+.portfolio-card,
+.cv-box,
+.contact-box{
+
+transition:.4s ease;
+
+}
+
+.about-card:hover,
+.software-card:hover,
+.skill-item:hover,
+.experience-card:hover,
+.certificate-card:hover,
+.portfolio-card:hover,
+.cv-box:hover,
+.contact-box:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 15px 35px rgba(255,0,0,.25);
+
+}
+
+/* BUTTON */
+
+.btn,
+.btn-sertifikat,
+.hero-badge{
+
+transition:.4s;
+}
+
+.btn:hover,
+.btn-sertifikat:hover,
+.hero-badge:hover{
+
+transform:
+translateY(-5px);
+
+box-shadow:
+0 10px 25px rgba(255,0,0,.5);
+
+}
+
+/* SERTIFIKAT */
+
+.certificate-card img{
+
+transition:.5s;
+
+}
+
+.certificate-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* PORTFOLIO */
+
+.portfolio-card img{
+
+transition:.5s;
+
+}
+
+.portfolio-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* NAVBAR */
+
+nav{
+
+animation:navbarDown 1s ease;
+
+}
+
+@keyframes navbarDown{
+
+from{
+
+opacity:0;
+transform:translate(-50%,-100px);
+
+}
+
+to{
+
+opacity:1;
+transform:translate(-50%,0);
+
+}
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#080808;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff3333;
+border-radius:20px;
+
+}
+
+</style>
+
 <section id="portfolio">
 
-<h1 class="title">
-My <span>Portfolio</span>
-</h1>
+<h2 class="section-title">
+Portofolio <span>Saya</span>
+</h2>
 
-<div class="gallery">
+<div class="portfolio-grid">
 
-<img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900" data-aos="zoom-in">
+<div class="portfolio-card">
 
-<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900" data-aos="zoom-in">
+<img src="{{ asset('images/Soundman.png') }}">
 
-<img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900" data-aos="zoom-in">
+<div class="portfolio-content">
 
-<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=900" data-aos="zoom-in">
+<h3>Soundman Mixer</h3>
 
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900" data-aos="zoom-in">
+<p>
+Produksi video dokumenter mengenai
+fakta dan solusi juru parkir liar
+di minimarket.
+</p>
 
-<img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900" data-aos="zoom-in">
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="{{ asset('images/Stuban-HIMAMMB-HIMADEGA.png') }}">
+
+<div class="portfolio-content">
+
+<h3>Studi Banding HIMA MMB</h3>
+
+<p>
+Berpartisipasi sebagai Divisi Hubungan
+Masyarakat (Humas) dalam pelaksanaan
+MMB FEST 2025.
+</p>
+
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="{{ asset('images/Sertifikat-Panitia-PKKMB.png') }}">
+
+<div class="portfolio-content">
+
+<h3>PKKMB X TECHNOGEAR 2025</h3>
+
+<p>
+Berpartisipasi sebagai Liaison Officer
+(LO) dalam kegiatan penerimaan
+mahasiswa baru PENS.
+</p>
+
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="{{ asset('images/Soundman.png') }}">
+
+<div class="portfolio-content">
+
+<h3>Soundman Mixer</h3>
+
+<p>
+Pengoperasian OBS Studio,
+audio mixer,
+kamera,
+dan sistem live streaming.
+</p>
+
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="{{ asset('images/MMB-BERBAGI.png') }}">
+
+<div class="portfolio-content">
+
+<h3>MMB Berbagi</h3>
+
+<p>
+Program kerja sosial HIMA MMB
+dengan peran sebagai Sekretaris.
+</p>
+
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<img src="{{ asset('images/Stuban-HIMAMMB-HIMADEGA.png') }}">
+
+<div class="portfolio-content">
+
+<h3>Studi Banding HIMA MMB</h3>
+
+<p>
+Kegiatan studi banding bersama
+HIMA DEGA UNESA
+sebagai Divisi Humas.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CV -->
+
+<section id="cv">
+
+<h2 class="section-title">
+CV <span>Saya</span>
+</h2>
+
+<div class="cv-box">
+
+<h2>
+Curriculum Vitae Muhammad Raffi
+</h2>
+
+<br>
+
+<p>
+
+Klik tombol di bawah
+untuk melihat atau mengunduh CV.
+
+</p>
+
+<br>
+
+<a
+href="{{ asset('cv/CV-MUHAMMAD-RAFFI.pdf') }}"
+target="_blank"
+class="btn">
+
+📄 Lihat CV
+
+</a>
+
+<a
+href="{{ asset('cv/CV-MUHAMMAD-RAFFI.pdf') }}"
+download
+class="btn">
+
+⬇️ Download CV
+
+</a>
 
 </div>
 
@@ -584,28 +1274,41 @@ My <span>Portfolio</span>
 
 <section id="contact">
 
-<h1 class="title">
-Contact <span>Me</span>
-</h1>
-
-<div class="contact-box" data-aos="fade-up">
-
-<h2>
-Let's Create Something Amazing
+<h2 class="section-title">
+Kontak <span>Saya</span>
 </h2>
 
+<div class="contact-box">
+
+<h2>
+Daftar Riwayat Hidup Muhammad Raffi
+</h2>
+
+<br>
+
 <p>
-Open for multimedia projects,
-video editing, graphic design,
-creative collaborations,
-and digital content production.
+
+Terbuka untuk kolaborasi multimedia,
+produksi video,
+broadcasting,
+live streaming,
+dan proyek kreatif lainnya.
+
 </p>
 
 <br>
 
-<p>📧 raffi.multimedia@gmail.com</p>
-<p>📱 +62 812 3456 7890</p>
-<p>📸 instagram.com/raffi.portfolio</p>
+<p>
+📧 muhammadraffi2703@gmail.com
+</p>
+
+<p>
+📱 +62 857 8480 2685
+</p>
+
+<p>
+📍 Surabaya, Jawa Timur
+</p>
 
 </div>
 
@@ -614,145 +1317,22 @@ and digital content production.
 <footer>
 
 <p>
-© 2026 Raffi Multimedia Broadcasting Portfolio
+
+© 2026 Muhammad Raffi
+Multimedia Broadcasting Portfolio
+
 </p>
 
 </footer>
-
-<!-- CSS FINAL -->
-
-<style>
-
-.timeline{
-max-width:900px;
-margin:auto;
-}
-
-.timeline-item{
-background:rgba(255,255,255,.05);
-padding:30px;
-margin:20px 0;
-border-left:5px solid #ff4444;
-border-radius:20px;
-transition:.4s;
-}
-
-.timeline-item:hover{
-transform:translateX(10px);
-box-shadow:0 0 25px rgba(255,0,0,.3);
-}
-
-.timeline-item h3{
-color:#ff4444;
-margin-bottom:10px;
-}
-
-.software-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.software-card{
-background:rgba(255,255,255,.05);
-padding:30px;
-border-radius:25px;
-text-align:center;
-border:1px solid rgba(255,255,255,.08);
-transition:.4s;
-overflow:hidden;
-}
-
-.software-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(255,0,0,.4);
-}
-
-.software-card img{
-width:80px;
-height:80px;
-margin-bottom:20px;
-transition:.5s;
-}
-
-.software-card:hover img{
-transform:
-scale(1.15)
-rotate(8deg);
-}
-
-.gallery{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.gallery img{
-width:100%;
-height:350px;
-object-fit:cover;
-border-radius:25px;
-transition:.5s;
-}
-
-.gallery img:hover{
-transform:
-scale(1.05)
-rotate(2deg);
-
-box-shadow:
-0 0 20px red,
-0 0 50px rgba(255,0,0,.5);
-}
-
-.contact-box{
-max-width:800px;
-margin:auto;
-text-align:center;
-padding:50px;
-background:rgba(255,255,255,.05);
-border-radius:25px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-.contact-box h2{
-margin-bottom:20px;
-}
-
-.contact-box p{
-line-height:2;
-color:#ddd;
-}
-
-footer{
-padding:40px;
-text-align:center;
-color:#aaa;
-border-top:1px solid rgba(255,255,255,.08);
-margin-top:50px;
-}
-
-</style>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
 
 AOS.init({
+
 duration:1200,
 once:true
-});
-
-window.addEventListener("load",()=>{
-
-setTimeout(()=>{
-
-document.getElementById("loader")
-.style.display="none";
-
-},1500);
 
 });
 
@@ -760,4 +1340,3 @@ document.getElementById("loader")
 
 </body>
 </html>
-```
